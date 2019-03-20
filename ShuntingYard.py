@@ -19,16 +19,19 @@ def shunt(infix):
             pofix, stack = pofix + stack[-1], stack[:-1]
         stack = stack[:-1]
     elif c in specials:
+	    #If the special character have less precedent than the preceding character in the stack, pop the 
+		#preceding characters out of the stack and put it on the pofix, and delete the character in the stack.
         while stack and specials.get(c,0) <= specials.get(stack[-1],0):
             pofix, stack = pofix + stack[-1],stack[:-1]
+		#If the special character have the same precedent like the preceding character in the stack, pop the 
+		#preceding character out of the stack and put it on the pofix, and delete the character in the stack.
         while stack and specials.get(c,0) == specials.get(stack[-1],0):
             pofix, stack = pofix + stack[-1],stack[:-1]
         stack = stack + c
-        print("Stack: "+stack)
-        print("String: "+pofix)
     else:
         pofix = pofix + c
-
+   
+  #At the end pop out all the characters from the stack and put them to pofix starting from the top.
   while stack:
       pofix, stack = pofix+ stack[-1],stack[:-1]
   
