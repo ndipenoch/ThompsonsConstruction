@@ -6,7 +6,7 @@
 
 def shunt(infix):
 
-  specials = {'*':50,'.':40,'|':30}
+  specials = {'^':60,'*':50,'/':50,'%':50,'.':40,'+':45,'-':45,'|':30}
 
   pofix=""
   stack=""
@@ -21,7 +21,11 @@ def shunt(infix):
     elif c in specials:
         while stack and specials.get(c,0) <= specials.get(stack[-1],0):
             pofix, stack = pofix + stack[-1],stack[:-1]
+        while stack and specials.get(c,0) == specials.get(stack[-1],0):
+            pofix, stack = pofix + stack[-1],stack[:-1]
         stack = stack + c
+        print("Stack: "+stack)
+        print("String: "+pofix)
     else:
         pofix = pofix + c
 
@@ -30,5 +34,5 @@ def shunt(infix):
   
   return pofix
 
-print(shunt("(a.b)|(c*.d)"))
+print(shunt("( ( A + B ) - C * ( D / E ) ) + F"))
     
