@@ -1,0 +1,20 @@
+Regular Expressions to NFA/e-NFA
+
+https://www.youtube.com/watch?v=v4vo1uKSMII
+
+Infix expression and Operator Precedence
+https://codeburst.io/conversion-of-infix-expression-to-postfix-expression-using-stack-data-structure-3faf9c212ab8
+
+
+https://www.geeksforgeeks.org/infix-to-postfix-using-different-precedence-values-for-in-stack-and-out-stack/
+
+
+Thompson algorithm
+
+https://www.sciencedirect.com/science/article/pii/S0166218X03002993
+
+http://www.personal.kent.edu/~rmuhamma/Compilers/MyCompiler/chapter3.htm
+
+https://web.tecnico.ulisboa.pt/~david.matos/w/pt/index.php/Theoretical_Aspects_of_Lexical_Analysis#Building_the_NFA:_Thompson.27s_Algorithm
+
+https://en.wikipedia.org/wiki/Thompson%27s_construction
