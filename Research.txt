@@ -18,3 +18,11 @@ http://www.personal.kent.edu/~rmuhamma/Compilers/MyCompiler/chapter3.htm
 https://web.tecnico.ulisboa.pt/~david.matos/w/pt/index.php/Theoretical_Aspects_of_Lexical_Analysis#Building_the_NFA:_Thompson.27s_Algorithm
 
 https://en.wikipedia.org/wiki/Thompson%27s_construction
+
+How to Create a User Interface in Python
+
+https://www.tutorialspoint.com/python/python_gui_programming.htm
+
+https://www.youtube.com/watch?v=KEnDTjBMLhU
+
+https://www.youtube.com/watch?v=_lSNIrR1nZU
