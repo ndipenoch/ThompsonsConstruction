@@ -26,3 +26,7 @@ https://www.tutorialspoint.com/python/python_gui_programming.htm
 https://www.youtube.com/watch?v=KEnDTjBMLhU
 
 https://www.youtube.com/watch?v=_lSNIrR1nZU
+
+Watch videos on Regular expression, DFA, Application and Limitation on Coursera.Org
+
+https://www.coursera.org/lecture/cs-algorithms-theory-machines/regular-expressions-9SUCI

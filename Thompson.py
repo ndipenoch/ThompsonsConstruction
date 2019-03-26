@@ -9,7 +9,7 @@
 
 #Import tkinter library for GUI
 import tkinter
-from tkinter import Frame,Label,Button
+from tkinter import Frame,Label,W,Entry,Button,Text,WORD
 root = tkinter.Tk()
 root.title("Thompson Algorithm G00352031")
 #Lenght and width of the window
@@ -18,10 +18,20 @@ app=Frame(root)
 app.grid()
 #Create a label and put it on the grid
 label1 = Label(app, text="Enter An Infix String")
+label1.grid(row=0,column=0,columnspan=2,sticky=W)
 label1.grid()
+#Create an entry field
+entry = Entry()
+entry.grid(row=0,column=4,columnspan=2,sticky=W)
+
+
 #Create a button and put it on the grid.
 submitBtn = Button(app, text="SUBMIT",fg="green")
-submitBtn.grid()
+submitBtn.grid(row=3,column=1,sticky=W)
+
+
+text = Text(width=100, height=20,wrap=WORD)
+text.grid(row=5,column=0,sticky=W)
 
 
 root.mainloop()
