@@ -7,6 +7,24 @@
 # https://web.tecnico.ulisboa.pt/~david.matos/w/pt/index.php/Theoretical_Aspects_of_Lexical_Analysis#Building_the_NFA:_Thompson.27s_Algorithm
 # https://www.sciencedirect.com/science/article/pii/S0166218X03002993
 
+#Import tkinter library for GUI
+import tkinter
+from tkinter import Frame,Label,Button
+root = tkinter.Tk()
+root.title("Thompson Algorithm G00352031")
+#Lenght and width of the window
+root.geometry("1000x500")
+app=Frame(root)
+app.grid()
+#Create a label and put it on the grid
+label1 = Label(app, text="Enter An Infix String")
+label1.grid()
+#Create a button and put it on the grid.
+submitBtn = Button(app, text="SUBMIT",fg="green")
+submitBtn.grid()
+
+
+root.mainloop()
 
 def shunt(infix):
 
