@@ -276,6 +276,15 @@ def clear_output():
 
 #Clear output Textbox button
 clearBtn= Button(window, text="CLEAR",bg="Green",fg="Orange",width=6,command=clear_output).grid(row=20,column=0,sticky=W)
+
+#Save to file Func
+def save_to_file():
+  file = open("Output.txt", "w")
+  file.write(output.get(1.0,END)) 
+  file.close()
+#Clear output Textbox button
+saveBtn= Button(window, text="SAVE TO FILE",bg="Khaki",fg="Orange",width=6,command=save_to_file).grid(row=22,column=0,sticky=W+E)
+
 app.grid()
 window.mainloop()
 

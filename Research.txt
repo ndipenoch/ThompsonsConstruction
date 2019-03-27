@@ -37,3 +37,5 @@ How To write to a fIle in from Gui on a clicking a button.
 Watch lecturers videos
 
 https://www.geeksforgeeks.org/make-notepad-using-tkinter/
+
+https://www.w3schools.com/python/python_file_write.asp
