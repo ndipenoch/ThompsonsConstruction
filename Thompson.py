@@ -9,32 +9,51 @@
 
 #Import tkinter library for GUI
 import tkinter
-from tkinter import Frame,Label,W,Entry,Button,Text,WORD
-root = tkinter.Tk()
-root.title("Thompson Algorithm G00352031")
+from tkinter import *
+
+#Key down Function
+def click():
+  #store the enter string to the entered_text variable.
+  entered_text=textEntry.get()
+  entered_text1=textEntry1.get()
+  output.delete(0.0,END)
+  try:
+    result=match(entered_text,entered_text1)
+  except:
+    result="All fields must be filled!"
+  output.insert(END,result)
+
+window = Tk()
+window.title("Thompson Algorithm G00352031")
 #Lenght and width of the window
-root.geometry("1000x500")
-app=Frame(root)
+window.geometry("600x600")
+window.configure(background="black")
+#Label
+Label (window, text="Enter An Infix:",bg="black",fg="Orange",font="non 12 bold").grid(row=1,column=0,sticky=W)
+#Entry TextField
+textEntry= Entry(window,width=60,bg="white")
+textEntry.grid(row=2,column=0,sticky=W)
+
+#Label
+Label (window, text="Enter A String:",bg="black",fg="Orange",font="non 12 bold").grid(row=3,column=0,sticky=W)
+#Entry TextField
+textEntry1= Entry(window,width=60,bg="white")
+textEntry1.grid(row=4,column=0,sticky=W)
+
+#Submit Button
+subBtn= Button(window, text="SUBMIT",bg="Green",fg="Orange",width=6,command=click).grid(row=5,column=0,sticky=W)
+#Label
+Label (window, text="See Your Output Below.",bg="black",fg="Orange",font="non 12 bold").grid(row=6,column=0,sticky=W)
+
+#Text box
+output= Text(window,width=70,height=30,wrap=WORD, background="Gray")
+output.grid(row=7,column=0,columnspan=2,sticky=W)
+
+app=Frame(window)
 app.grid()
-#Create a label and put it on the grid
-label1 = Label(app, text="Enter An Infix String")
-label1.grid(row=0,column=0,columnspan=2,sticky=W)
-label1.grid()
-#Create an entry field
-entry = Entry()
-entry.grid(row=0,column=4,columnspan=2,sticky=W)
 
 
-#Create a button and put it on the grid.
-submitBtn = Button(app, text="SUBMIT",fg="green")
-submitBtn.grid(row=3,column=1,sticky=W)
-
-
-text = Text(width=100, height=20,wrap=WORD)
-text.grid(row=5,column=0,sticky=W)
-
-
-root.mainloop()
+window.mainloop()
 
 def shunt(infix):
 
