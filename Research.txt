@@ -30,3 +30,10 @@ https://www.youtube.com/watch?v=_lSNIrR1nZU
 Watch videos on Regular expression, DFA, Application and Limitation on Coursera.Org
 
 https://www.coursera.org/lecture/cs-algorithms-theory-machines/regular-expressions-9SUCI
+
+
+How To write to a fIle in from Gui on a clicking a button.
+
+Watch lecturers videos
+
+https://www.geeksforgeeks.org/make-notepad-using-tkinter/
