@@ -219,18 +219,23 @@ def click():
   #store the enter string to the entered_text variable.
   entered_text=textEntry.get()
   entered_text1=textEntry1.get()
-  #Clear the output box at the start
-  output.delete(0.0,END)
-  try:
-    result=match(entered_text,entered_text1)
-    if result==0:
-      result="False"
-    elif result==1:
-      result="True"
-  except:
-    result="Infix Filed Must be Filled!"
-  #Print result in the output box
-  output.insert(END,result)
+  infix_split = entered_text.split(',')
+  string_split = entered_text1.split(',')
+
+  for i in infix_split:
+    for s in string_split:
+      #Clear the output box at the start
+      #output.delete(0.0,END)
+      try:
+        result=match(i,s)
+        if result==0:
+          result="False"+"\r\n"
+        elif result==1:
+          result="True"+"\r\n"
+      except:
+        result="Infix Filed Must be Filled!"
+      #Print result in the output box
+      output.insert(END,result)
 
 window = Tk()
 window.title("Thompson Algorithm G00352031")
@@ -238,13 +243,13 @@ window.title("Thompson Algorithm G00352031")
 window.geometry("600x600")
 window.configure(background="black")
 #Label
-Label (window, text="Enter An Infix:",bg="black",fg="Orange",font="non 12 bold").grid(row=1,column=0,sticky=W)
+Label (window, text="Enter Infix Seperated By Commas:",bg="black",fg="Orange",font="non 12 bold").grid(row=1,column=0,sticky=W)
 #Entry TextField
 textEntry= Entry(window,width=60,bg="white")
 textEntry.grid(row=2,column=0,sticky=W)
 
 #Label
-Label (window, text="Enter A String:",bg="black",fg="Orange",font="non 12 bold").grid(row=3,column=0,sticky=W)
+Label (window, text="Enter Strings Seperated By Commas:",bg="black",fg="Orange",font="non 12 bold").grid(row=3,column=0,sticky=W)
 #Entry TextField
 textEntry1= Entry(window,width=60,bg="white")
 textEntry1.grid(row=4,column=0,sticky=W)
@@ -267,4 +272,6 @@ exitBtn= Button(window, text="EXIT",bg="Red",fg="Orange",width=4,command=close_w
 app=Frame(window)
 app.grid()
 window.mainloop()
+
+
 
