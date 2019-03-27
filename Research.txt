@@ -39,3 +39,8 @@ Watch lecturers videos
 https://www.geeksforgeeks.org/make-notepad-using-tkinter/
 
 https://www.w3schools.com/python/python_file_write.asp
+
+
+Research on how to use a fils selector on tkinter GUI
+
+https://pythonspot.com/tk-file-dialogs/

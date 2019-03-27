@@ -9,6 +9,7 @@
 
 #Import tkinter library for GUI
 import tkinter
+from tkinter import filedialog
 from tkinter import *
 
 def shunt(infix):
@@ -236,6 +237,7 @@ def click():
       output.insert(END,result)
 
 window = Tk()
+
 window.title("Thompson Algorithm G00352031")
 #Lenght and width of the window
 window.geometry("600x600")
@@ -245,6 +247,15 @@ Label (window, text="Enter Infix Seperated By Commas:",bg="black",fg="Orange",fo
 #Entry TextField
 textEntry= Entry(window,width=60,bg="white")
 textEntry.grid(row=2,column=0,sticky=W)
+
+#Select an Infix file to read from
+def select_Infix():
+  window.filename1 =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+ 
+
+#Clear output Textbox button
+selectInfix= Button(window, text="Select InFix File",bg="Green",fg="Orange",width=6,command=select_Infix).grid(row=2,column=0,sticky=E)
+
 
 #Label
 Label (window, text="Enter Strings Seperated By Commas:",bg="black",fg="Orange",font="non 12 bold").grid(row=3,column=0,sticky=W)
