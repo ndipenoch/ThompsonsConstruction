@@ -224,8 +224,6 @@ def click():
 
   for i in infix_split:
     for s in string_split:
-      #Clear the output box at the start
-      #output.delete(0.0,END)
       try:
         result=match(i,s)
         if result==0:
@@ -270,6 +268,14 @@ def close_window():
 #Exit Button
 exitBtn= Button(window, text="EXIT",bg="Red",fg="Orange",width=4,command=close_window).grid(row=20,column=0,sticky=E)
 app=Frame(window)
+
+#Clear func
+#Clear the output box at the start
+def clear_output():
+  output.delete(0.0,END)
+
+#Clear output Textbox button
+clearBtn= Button(window, text="CLEAR",bg="Green",fg="Orange",width=6,command=clear_output).grid(row=20,column=0,sticky=W)
 app.grid()
 window.mainloop()
 
