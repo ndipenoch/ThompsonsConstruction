@@ -12,6 +12,7 @@ import tkinter
 from tkinter import filedialog
 from tkinter import *
 
+
 def shunt(infix):
 
   specials = {'^':60,'*':50,'/':50,'%':50,'.':40,'+':45,'-':45,'|':30}
@@ -238,6 +239,26 @@ def submit_Func():
 
 #Validate Func
 def validate_Func():
+  #store the enter string to the entered_text variable.
+  entered_text=InfixFilecontents
+  print(entered_text)
+  entered_text1=StringFilecontents
+  print(entered_text +"heloo")
+  infix_split = entered_text.split(',')
+  string_split = entered_text1.split(',')
+
+  for i in infix_split:
+    for s in string_split:
+      try:
+        result=match(i,s)
+        if result==0:
+          result="False"+"\r\n"
+        elif result==1:
+          result="True"+"\r\n"
+      except:
+        result="You Must select an Ifix and a String file!"
+      #Print result in the output box
+      output.insert(END,result)
 
 window = Tk()
 
@@ -255,10 +276,16 @@ Label (window, text="Select An Infix File:",bg="black",fg="Orange",font="non 12 
 textEntry= Entry(window,width=45,bg="white")
 textEntry.grid(row=2,column=0,sticky=W)
 
-#Select an Infix file function to read from
+#Select an Infix file function to read from, default file type is jpeg
 def select_Infix():
+  #Declare InfixFilecontents as a global variable
+  global InfixFilecontents
   window.filename1 =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+  f_Infix=open(window.filename1, "r")
+  if f_Infix.mode == 'r':
+    InfixFilecontents =f_Infix.read()
 
+  
 #Select Infix String button
 selectInfix= Button(window, text="Select InFix File",bg="Green",fg="Orange",width=12,command=select_Infix).grid(row=2,column=1)
 
@@ -272,9 +299,15 @@ Label (window, text="Select String File:",bg="black",fg="Orange",font="non 12 bo
 textEntry1= Entry(window,width=45,bg="white")
 textEntry1.grid(row=4,column=0,sticky=W)
 
-#Select a String  file to read from
+#Select a String  file to read from default file type is jpeg 
 def select_String():
+  #Declare StringFilecontents as a global variable.
+  global StringFilecontents
   window.filename2 =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+  f_String=open(window.filename2, "r")
+  if f_String.mode == 'r':
+    StringFilecontents =f_String.read()
+
 
 #Select Sring button
 selectString= Button(window, text="Select String File",bg="Green",fg="Orange",width=12,command=select_String).grid(row=4,column=1)
