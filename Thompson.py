@@ -77,6 +77,7 @@ def compile(pofix):
       newnfa = nfa(nfa1.initial,nfa2.accept)
       nfastack.append(newnfa)
     elif c =='|':
+      #Pipe | is Union, it matches one or the other.
       # Pop two NFA's off the stack.
       nfa2 = nfastack.pop()
       nfa1 = nfastack.pop()
@@ -93,22 +94,20 @@ def compile(pofix):
       # Push new NFA to the state
       newnfa = nfa(initial, accept)
       nfastack.append(newnfa)
-    elif c =='|':
-      # Pop two NFA's off the stack.
-      nfa2 = nfastack.pop()
+    elif c =='?':
+      # Question mark ?,matches zero or one.
+      # Pop a single NFA from the stack
       nfa1 = nfastack.pop()
-      #Create a new intial state and connect it to the initial state of the 
-      #NFA's pop of from the stack
+      # Create and initial and accept states.
       initial = state()
-      initial.edge1 = nfa1.initial
-      initial.edge2 = nfa2.initial
-      #Create a new accept state and coonect it to the 2 accpets state of
-      # the NFA's poped from the stack.
       accept = state()
-      nfa1.accept.edge1 = accept
-      nfa2.accept.edge1 = accept
-      # Push new NFA to the state
-      newnfa = nfa(initial, accept)
+      # Join the new initial state to nfa1's initial state and the new accept  state.
+      initial.edge1 = nfa1.initial
+      initial.edge2 = accept
+      # Join the old accept state to the new accept state.
+      nfa1.accept.edge2 = accept
+      # Push new NFA to the stack.
+      newnfa = nfa(initial,accept)
       nfastack.append(newnfa)
     elif c =='+':
        # plus + matches one or more
