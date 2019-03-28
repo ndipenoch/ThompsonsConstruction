@@ -46,6 +46,7 @@ def shunt(infix):
   
   return pofix
 
+#Matching starts
 # Represent a state with two arrows, labelled by label.
 # Use None for a label representing "e" arrows.
 class state:
@@ -110,23 +111,15 @@ def compile(pofix):
       newnfa = nfa(initial, accept)
       nfastack.append(newnfa)
     elif c =='+':
-      # Pop two NFA's off the stack.
-      nfa2 = nfastack.pop()
+       # plus + matches one or more
+       # Pop a single NFA from the stack
       nfa1 = nfastack.pop()
-      #Create a new intial state and connect it to the initial state of the 
-      #NFA's pop of from the stack
-      initial = state()
-      initial.edge1 = nfa1.initial
-      initial.edge2 = nfa2.initial
-      #Create a new accept state and coonect it to the 2 accpets state of
-      # the NFA's poped from the stack.
-      accept = state()
-      nfa1.accept.edge1 = accept
-      nfa2.accept.edge1 = accept
-      # Push new NFA to the state
-      newnfa = nfa(initial, accept)
+      # Join the accept state to the initila state.
+      nfa1.accept.edge1 = nfa1.initial
+      newnfa = nfa(initial,accept)
       nfastack.append(newnfa)
     elif c =='*':
+      #Kleen star * matches a sequence of zero or more
       # Pop a single NFA from the stack
       nfa1 = nfastack.pop()
       # Create and initial and accept states.
@@ -233,7 +226,7 @@ def submit_Func():
         elif result==1:
           result="True"+"\r\n"
       except:
-        result="Infix Filed Must be Filled!"
+        result="Infix Field Must be Filled!"
       #Print result in the output box
       output.insert(END,result)
 
@@ -243,7 +236,6 @@ def validate_Func():
   entered_text=InfixFilecontents
   print(entered_text)
   entered_text1=StringFilecontents
-  print(entered_text +"heloo")
   infix_split = entered_text.split(',')
   string_split = entered_text1.split(',')
 
