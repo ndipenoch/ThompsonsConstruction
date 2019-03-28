@@ -215,8 +215,8 @@ for i in infixes:
   for s in strings:
     print(match(i,s),i,s)
 
-#Key down Function
-def click():
+#Submit Func
+def submit_Func():
   #store the enter string to the entered_text variable.
   entered_text=textEntry.get()
   entered_text1=textEntry1.get()
@@ -236,6 +236,9 @@ def click():
       #Print result in the output box
       output.insert(END,result)
 
+#Validate Func
+def validate_Func():
+
 window = Tk()
 
 window.title("Thompson Algorithm G00352031")
@@ -244,27 +247,44 @@ window.geometry("600x600")
 window.configure(background="black")
 #Label
 Label (window, text="Enter Infix Seperated By Commas:",bg="black",fg="Orange",font="non 12 bold").grid(row=1,column=0,sticky=W)
+
+#Label
+Label (window, text="Select An Infix File:",bg="black",fg="Orange",font="non 12 bold").grid(row=1,column=1)
+
 #Entry TextField
-textEntry= Entry(window,width=60,bg="white")
+textEntry= Entry(window,width=45,bg="white")
 textEntry.grid(row=2,column=0,sticky=W)
 
-#Select an Infix file to read from
+#Select an Infix file function to read from
 def select_Infix():
   window.filename1 =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
- 
 
-#Clear output Textbox button
-selectInfix= Button(window, text="Select InFix File",bg="Green",fg="Orange",width=6,command=select_Infix).grid(row=2,column=0,sticky=E)
-
+#Select Infix String button
+selectInfix= Button(window, text="Select InFix File",bg="Green",fg="Orange",width=12,command=select_Infix).grid(row=2,column=1)
 
 #Label
 Label (window, text="Enter Strings Seperated By Commas:",bg="black",fg="Orange",font="non 12 bold").grid(row=3,column=0,sticky=W)
+
+#Label
+Label (window, text="Select String File:",bg="black",fg="Orange",font="non 12 bold").grid(row=3,column=1)
+
 #Entry TextField
-textEntry1= Entry(window,width=60,bg="white")
+textEntry1= Entry(window,width=45,bg="white")
 textEntry1.grid(row=4,column=0,sticky=W)
 
+#Select a String  file to read from
+def select_String():
+  window.filename2 =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+
+#Select Sring button
+selectString= Button(window, text="Select String File",bg="Green",fg="Orange",width=12,command=select_String).grid(row=4,column=1)
+
 #Submit Button
-subBtn= Button(window, text="SUBMIT",bg="Green",fg="Orange",width=6,command=click).grid(row=5,column=0,sticky=W)
+subBtn= Button(window, text="SUBMIT",bg="Green",fg="Orange",width=6,command=submit_Func).grid(row=5,column=0,sticky=W)
+
+#Validate Button
+vdBtn= Button(window, text="VALIDATE",bg="Orange",fg="Red",width=8,command=validate_Func).grid(row=5,column=1)
+
 #Label
 Label (window, text="See Your Output Below.",bg="black",fg="Orange",font="non 12 bold").grid(row=6,column=0,sticky=W)
 
@@ -294,7 +314,7 @@ def save_to_file():
   file.write(output.get(1.0,END)) 
   file.close()
 #Clear output Textbox button
-saveBtn= Button(window, text="SAVE TO FILE",bg="Khaki",fg="Orange",width=6,command=save_to_file).grid(row=22,column=0,sticky=W+E)
+saveBtn= Button(window, text="SAVE",bg="Orange",fg="Red",width=4,command=save_to_file).grid(row=20,column=0)
 
 app.grid()
 window.mainloop()
