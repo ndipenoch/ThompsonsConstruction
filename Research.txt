@@ -44,3 +44,7 @@ https://www.w3schools.com/python/python_file_write.asp
 Research on how to use a fils selector on tkinter GUI
 
 https://pythonspot.com/tk-file-dialogs/
+
+Research on how to read from a file-dialogs/
+
+https://www.guru99.com/reading-and-writing-files-in-python.html.
