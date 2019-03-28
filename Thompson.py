@@ -276,11 +276,11 @@ Label (window, text="Select An Infix File:",bg="black",fg="Orange",font="non 12 
 textEntry= Entry(window,width=45,bg="white")
 textEntry.grid(row=2,column=0,sticky=W)
 
-#Select an Infix file function to read from, default file type is jpeg
+#Select an Infix file function to read from,and txt as a default file
 def select_Infix():
   #Declare InfixFilecontents as a global variable
   global InfixFilecontents
-  window.filename1 =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+  window.filename1 =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("txt files","*.txt"),("jpeg files","*.jpg"),("all files","*.*")))
   f_Infix=open(window.filename1, "r")
   if f_Infix.mode == 'r':
     InfixFilecontents =f_Infix.read()
@@ -299,11 +299,11 @@ Label (window, text="Select String File:",bg="black",fg="Orange",font="non 12 bo
 textEntry1= Entry(window,width=45,bg="white")
 textEntry1.grid(row=4,column=0,sticky=W)
 
-#Select a String  file to read from default file type is jpeg 
+#Select a String  file to read from and txt as the default file type
 def select_String():
   #Declare StringFilecontents as a global variable.
   global StringFilecontents
-  window.filename2 =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+  window.filename2 =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("txt files","*.txt"),("jpeg files","*.jpg"),("all files","*.*")))
   f_String=open(window.filename2, "r")
   if f_String.mode == 'r':
     StringFilecontents =f_String.read()
