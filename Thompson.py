@@ -226,30 +226,36 @@ def submit_Func():
         elif result==1:
           result="True"+"\r\n"
       except:
-        result="Infix Field Must be Filled!"
+        result="Infix Field Must be Filled!"+"\r\n"
       #Print result in the output box
       editArea.insert(END,result)
 
 #Validate Func
 def validate_Func():
   #store the enter string to the entered_text variable.
-  entered_text=InfixFilecontents
-  entered_text1=StringFilecontents
-  infix_split = entered_text.split(',')
-  string_split = entered_text1.split(',')
+  try:
+    entered_text=InfixFilecontents
+    entered_text1=StringFilecontents
+    infix_split = entered_text.split(',')
+    string_split = entered_text1.split(',')
 
-  for i in infix_split:
-    for s in string_split:
-      try:
-        result=match(i,s)
-        if result==0:
-          result="False"+"\r\n"
-        elif result==1:
-          result="True"+"\r\n"
-      except:
-        result="You Must select an Ifix and a String file!"
-      #Print result in the output box
-      editArea.insert(END,result)
+    for i in infix_split:
+      for s in string_split:
+        try:
+          result=match(i,s)
+          if result==0:
+            result="False"+"\r\n"
+          elif result==1:
+            result="True"+"\r\n"
+        except:
+          result="The Infix File is Empty!"+"\r\n"
+        #Print result in the output box
+        editArea.insert(END,result)
+  except:
+    result="You Must select An Infix And String Files!"+"\r\n"
+  #Print result in the output box
+  editArea.insert(END,result)
+
 
 window = Tk()
 
@@ -315,7 +321,7 @@ Label (window, text="See Your Output Below.",bg="black",fg="Orange",font="non 12
 #Text box with scrollbar
 #Code to do the scroll bar gotten from stack over flow
 #https://stackoverflow.com/questions/17657212/how-to-code-the-tkinter-scrolledtext-module
-output = Frame(window,width=80, height=80,bg = '#ffffff',
+output = Frame(window,width=80, height=80,bg = 'blue',
                   borderwidth=1, relief="sunken")
 scrollbar = Scrollbar(output) 
 editArea = Text(output, width=70, height=25, wrap="word",
