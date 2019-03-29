@@ -54,3 +54,7 @@ Research finding the meaning of different operands.
 https://swtch.com/~rsc/regexp/regexp1.html
 
 Research on the meaning of the dollar sign.
+
+Research on adding the scroll bar to the GUI output winddow.
+
+https://stackoverflow.com/questions/17657212/how-to-code-the-tkinter-scrolledtext-module

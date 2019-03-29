@@ -173,7 +173,7 @@ def followes(state):
 def match(infix,string):
   """Matches string to infix regular expression"""
 
-  # Shunt and compile teh regular expression.
+  # Shunt and compile the regular expression.
   postfix = shunt(infix)
   nfa = compile(postfix)
 
@@ -208,6 +208,7 @@ for i in infixes:
   for s in strings:
     print(match(i,s),i,s)
 
+"""Start of GUI"""
 #Submit Func
 def submit_Func():
   #store the enter string to the entered_text variable.
@@ -233,7 +234,6 @@ def submit_Func():
 def validate_Func():
   #store the enter string to the entered_text variable.
   entered_text=InfixFilecontents
-  print(entered_text)
   entered_text1=StringFilecontents
   infix_split = entered_text.split(',')
   string_split = entered_text1.split(',')
@@ -315,6 +315,7 @@ Label (window, text="See Your Output Below.",bg="black",fg="Orange",font="non 12
 #Text box
 output= Text(window,width=70,height=25,wrap=WORD, background="Gray",fg="Blue")
 output.grid(row=7,column=0,columnspan=2,sticky=W)
+
 
 #Exit func
 def close_window():
