@@ -228,7 +228,7 @@ def submit_Func():
       except:
         result="Infix Field Must be Filled!"
       #Print result in the output box
-      output.insert(END,result)
+      editArea.insert(END,result)
 
 #Validate Func
 def validate_Func():
@@ -249,7 +249,7 @@ def validate_Func():
       except:
         result="You Must select an Ifix and a String file!"
       #Print result in the output box
-      output.insert(END,result)
+      editArea.insert(END,result)
 
 window = Tk()
 
@@ -312,8 +312,19 @@ vdBtn= Button(window, text="VALIDATE",bg="Orange",fg="Red",width=8,command=valid
 #Label
 Label (window, text="See Your Output Below.",bg="black",fg="Orange",font="non 12 bold").grid(row=6,column=0,sticky=W)
 
-#Text box
-output= Text(window,width=70,height=25,wrap=WORD, background="Gray",fg="Blue")
+#Text box with scrollbar
+#Code to do the scroll bar gotten from stack over flow
+#https://stackoverflow.com/questions/17657212/how-to-code-the-tkinter-scrolledtext-module
+output = Frame(window,width=80, height=80,bg = '#ffffff',
+                  borderwidth=1, relief="sunken")
+scrollbar = Scrollbar(output) 
+editArea = Text(output, width=70, height=25, wrap="word",
+                   yscrollcommand=scrollbar.set,
+                   borderwidth=0, highlightthickness=0,background="Gray",fg="Blue")
+scrollbar.config(command=editArea.yview)
+scrollbar.pack(side="right", fill="y")
+editArea.pack(side="left", fill="both", expand=True)
+output.place(x=10,y=30)
 output.grid(row=7,column=0,columnspan=2,sticky=W)
 
 
@@ -328,7 +339,7 @@ app=Frame(window)
 #Clear func
 #Clear the output box at the start
 def clear_output():
-  output.delete(0.0,END)
+  editArea.delete(0.0,END)
 
 #Clear output Textbox button
 clearBtn= Button(window, text="CLEAR",bg="Green",fg="Orange",width=6,command=clear_output).grid(row=20,column=0,sticky=W)
@@ -336,7 +347,7 @@ clearBtn= Button(window, text="CLEAR",bg="Green",fg="Orange",width=6,command=cle
 #Save to file Func
 def save_to_file():
   file = open("Output.txt", "w")
-  file.write(output.get(1.0,END)) 
+  file.write(editArea.get(1.0,END)) 
   file.close()
 #Clear output Textbox button
 saveBtn= Button(window, text="SAVE",bg="Orange",fg="Red",width=4,command=save_to_file).grid(row=20,column=0)
