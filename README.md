@@ -55,5 +55,13 @@ The biggest issues I face during the life cycle of this project are :
  -Trying go get the meaning of other operators other like "$", "^". I found a few on-line but they were just comments and not official documents, So I didn't use them.
  - How to declare a variable as static or global, I found the solution on-line by using the keyword "global".
   
-
-
+![](Screenshots/Homepage.JPG)
+![](Screenshots/Entry-Box.JPG)
+![](Screenshots/Entry-Box-Error-Msg1.JPG)
+![](Screenshots/Entry-Box-Error-Msg2.JPG)
+![](Screenshots/File-Chooser.JPG)
+![](Screenshots/File-Error-Msg1.JPG)
+![](Screenshots/File-Error-Msg2.JPG)
+![](Screenshots/File-Output.JPG)
+![](Screenshots/Vertical-Scrollbar.JPG)
+![](Screenshots/Console-Output.JPG
