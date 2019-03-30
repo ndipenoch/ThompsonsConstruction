@@ -21,3 +21,9 @@ If you select both files and the Infix file is empty, you will see this error me
 The strings in both files must be separated by commas, ",".
 
 Also, you can hard code the inputs directly in the code and the output will be displayed in the console window.
+
+The results or output are shown/displayed in output box(Text Area) which has a vertical scroll bar functionality.
+The scroll bar will appear once the text have gone pass the height of the text area.
+Also, you can print the output to a file upon clicking the "SAVE" button. This file is found in the project folder and is call Output.txt.
+
+
