@@ -5,6 +5,7 @@ https://www.youtube.com/watch?v=v4vo1uKSMII
 Infix expression and Operator Precedence
 https://codeburst.io/conversion-of-infix-expression-to-postfix-expression-using-stack-data-structure-3faf9c212ab8
 
+https://en.wikipedia.org/wiki/Shunting-yard_algorithm
 
 https://www.geeksforgeeks.org/infix-to-postfix-using-different-precedence-values-for-in-stack-and-out-stack/
 

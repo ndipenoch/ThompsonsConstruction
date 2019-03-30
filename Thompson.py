@@ -12,7 +12,7 @@ import tkinter
 from tkinter import filedialog
 from tkinter import *
 
-
+"""Start of shunting"""
 def shunt(infix):
 
   specials = {'^':60,'*':50,'/':50,'%':50,'.':40,'+':45,'-':45,'|':30}
@@ -204,6 +204,7 @@ def match(infix,string):
 infixes = ["a.b.c*","a.(b|d).c*","(a.(b|d))*","a.(b.b)*.c"]
 strings = ["","abc","abbc","abcc","abad","abbbc"]
 
+#Print tests to the console
 for i in infixes:
   for s in strings:
     print(match(i,s),i,s)
@@ -211,7 +212,8 @@ for i in infixes:
 """Start of GUI"""
 #Submit Func
 def submit_Func():
-  #store the enter string to the entered_text variable.
+  #store the infix file string to the entered_text variable and remove the commas ","".
+  #store the file string to the entered_text1 variable and remove the commas ",".
   entered_text=textEntry.get()
   entered_text1=textEntry1.get()
   infix_split = entered_text.split(',')
@@ -227,12 +229,13 @@ def submit_Func():
           result="True"+"\r\n"
       except:
         result="Infix Field Must be Filled!"+"\r\n"
-      #Print result in the output box
+      #Print error message to the output box
       editArea.insert(END,result)
 
 #Validate Func
 def validate_Func():
-  #store the enter string to the entered_text variable.
+   #store the infix file string to the entered_text variable and remove the commas ","".
+  #store the file string to the entered_text1 variable and remove the commas ",".
   try:
     entered_text=InfixFilecontents
     entered_text1=StringFilecontents
@@ -253,7 +256,7 @@ def validate_Func():
         editArea.insert(END,result)
   except:
     result="You Must select An Infix And String Files!"+"\r\n"
-  #Print result in the output box
+  #Print error mesaage to the output box
   editArea.insert(END,result)
 
 
@@ -358,7 +361,7 @@ def save_to_file():
 #Clear output Textbox button
 saveBtn= Button(window, text="SAVE",bg="Orange",fg="Red",width=4,command=save_to_file).grid(row=20,column=0)
 
-app.grid()
+#The main loop
 window.mainloop()
 
 
