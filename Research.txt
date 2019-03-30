@@ -22,6 +22,8 @@ https://en.wikipedia.org/wiki/Thompson%27s_construction
 
 How to Create a User Interface in Python
 
+https://www.geeksforgeeks.org/python-gui-tkinter/
+
 https://www.tutorialspoint.com/python/python_gui_programming.htm
 
 https://www.youtube.com/watch?v=KEnDTjBMLhU
@@ -33,7 +35,7 @@ Watch videos on Regular expression, DFA, Application and Limitation on Coursera.
 https://www.coursera.org/lecture/cs-algorithms-theory-machines/regular-expressions-9SUCI
 
 
-How To write to a fIle in from Gui on a clicking a button.
+How to write to a fIle from Gui upon clicking a button.
 
 Watch lecturers videos
 
