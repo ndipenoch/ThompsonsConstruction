@@ -26,4 +26,10 @@ The results or output are shown/displayed in output box(Text Area) which has a v
 The scroll bar will appear once the text have gone pass the height of the text area.
 Also, you can print the output to a file upon clicking the "SAVE" button. This file is found in the project folder and is call Output.txt.
 
+At the bottom just after the the text area are three buttons:
+- "CLEAR" to clear the output text area.
+- "SAVE"  to save or write your output to a file.
+- "EXIT" to exit the application gracefully.
+
+
 
