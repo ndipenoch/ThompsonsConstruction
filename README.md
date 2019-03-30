@@ -55,6 +55,7 @@ The biggest issues I face during the life cycle of this project are :
  -Trying go get the meaning of other operators other like "$", "^". I found a few on-line but they were just comments and not official documents, So I didn't use them.
  - How to declare a variable as static or global, I found the solution on-line by using the keyword "global".
   
+Research and links are documented in a file called Research.txt in the project folder file.
 ![](Screenshots/Homepage.JPG)
 ![](Screenshots/Entry-Box.JPG)
 ![](Screenshots/Entry-Box-Error-Msg1.JPG)
